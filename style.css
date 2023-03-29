@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #fff;
+}
+
+/* Your Styles */
+
+.wrapper{
+  text-align: center;
+}
+.form{
+  width: 30%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-radius: 25px;
+  background-color: #ccc;
+}
+.form-group{
+  text-align: right;
+  margin-right: 25%;
+}
+
+.body-table{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.form-header{
+  padding: 0 50px;
+  background-color: #5A607A;
+}
