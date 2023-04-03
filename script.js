@@ -16,7 +16,6 @@ btnSubmit.addEventListener("click", function(e){
 	let product = document.getElementById("product").value;
 	let price = parseInt(document.getElementById("price").value);
 	let iva = document.getElementById("iva").value;
-	console.log(iva);
 	if (product === "" || price === "") {
 		alert("Product and price box must not be empty");
 	}else{
@@ -37,6 +36,7 @@ btnSubmit.addEventListener("click", function(e){
 		}
 		saveData(fullProduct);
 		renderData();
+		deleteItem();
 		document.getElementById("product-form").reset();
 	}
 });
@@ -88,22 +88,28 @@ function renderData(){
 	});
 }
 
-//function deleteItem(){
-	let buttons = document.querySelectorAll(".btn-delete");
+deleteItem();
+
+function deleteItem(){
+		let buttons = document.querySelectorAll(".btn-delete");
 		for(let i=0; i < buttons.length; i++){
 			buttons[i].addEventListener("click", function(e){
 				console.log("funciona");
 				let tasks = JSON.parse(localStorage.getItem('tasks'));
-				console.log(tasks[i]);
-				console.log(tasks.indexOf(tasks[i]));
+				//console.log(tasks[i]);
+				//console.log(tasks.indexOf(tasks[i]));
 				tasks = tasks.filter(x => x != tasks[i]);
-				console.log(tasks);
+				deleteItem(tasks)
+				
 				localStorage.clear();
 				localStorage.setItem('tasks', JSON.stringify(tasks));
 				renderData();
+				console.log(tasks);
+				deleteItem();
 			});
 		}
-//}
+
+}
 
 
 
